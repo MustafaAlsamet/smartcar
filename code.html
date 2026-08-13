@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل السيارة والحجز - سمارت لتأجير السيارات</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Cairo -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdeae",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-fixed-dim": "#c9c6bf",
+                        "on-tertiary-container": "#2c2b26",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-on-surface": "#f3f0f0",
+                        "gold-hover": "#8C6D41",
+                        "on-secondary": "#ffffff",
+                        "primary": "#775928",
+                        "error": "#721C24",
+                        "border-light": "#E0E0E0",
+                        "tertiary": "#605e58",
+                        "primary-fixed-dim": "#e8c086",
+                        "outline-variant": "#d1c5b6",
+                        "on-tertiary-fixed-variant": "#484741",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "on-background": "#1b1c1c",
+                        "on-tertiary-fixed": "#1c1c17",
+                        "on-primary-fixed-variant": "#5d4213",
+                        "surface-container": "#f0eded",
+                        "success": "#155724",
+                        "background": "#fbf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-container": "#b08d57",
+                        "on-secondary-container": "#636262",
+                        "surface-container-high": "#eae8e7",
+                        "surface-white": "#FFFFFF",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-container": "#3d2700",
+                        "surface-bright": "#fbf9f8",
+                        "surface-variant": "#e4e2e1",
+                        "surface-dark": "#2A2A2A",
+                        "error-container": "#ffdad6",
+                        "outline": "#807569",
+                        "tertiary-fixed": "#e6e2da",
+                        "inverse-primary": "#e8c086",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#5f5e5e",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#775928",
+                        "on-surface-variant": "#4e453a",
+                        "on-primary-fixed": "#281800",
+                        "secondary-container": "#e2dfde",
+                        "tertiary-container": "#95928b",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-xs": "4px",
+                        "unit-xl": "32px",
+                        "section-gap": "40px",
+                        "margin-mobile": "20px",
+                        "unit-md": "16px",
+                        "unit-lg": "24px",
+                        "container-max": "1200px",
+                        "gutter": "25px",
+                        "unit-sm": "8px",
+                        "form-gap": "20px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Cairo"],
+                        "headline-md": ["Cairo"],
+                        "body-lg": ["Cairo"],
+                        "body-md": ["Cairo"],
+                        "label-md": ["Cairo"],
+                        "headline-sm": ["Cairo"],
+                        "headline-lg": ["Cairo"],
+                        "label-lg": ["Cairo"],
+                        "headline-lg-mobile": ["Cairo"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["16px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-sm": ["22px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-lg": ["44px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-lg": ["20px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Cairo', sans-serif; background-color: #fbf9f8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom Select Styling */
+        select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23775928%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: left 1rem center;
+            background-size: 0.65em auto;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background pt-20">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface-dark shadow-md">
+<div class="max-w-container-max mx-auto px-unit-lg flex justify-between items-center h-20">
+<a class="flex items-center gap-3" href="SCREEN_2">
+<img alt="سمارت لتأجير السيارات" class="h-10 object-contain bg-surface-container-lowest rounded px-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaNMXJtvk_fpIJV6aOwk22d44Z7eY2rh-gAPZD7w7JqPi1pJpyP2EfHP1lHdvfbJIurKBB9V5X3my1qMEOcTawMNbMzQ30hvAR4qq5SSUoTCgiuzYbbBURRMnveh2ju-pNE7gAwNv-q5ZU_LrXYl9eNik8NUiwKVv-3ddJaAVfsYKeMzKD05Q2d0lNkbhtlC7UBP5FHYLdwxPj6TQ5JGrYZKc2TsAGqggGOL5IKiIomvCOaIl8XZvGYg"/>
+<div class="font-headline-lg text-headline-sm md:text-headline-lg text-primary-fixed hidden sm:block">سمارت لتأجير السيارات</div>
+</a>
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex space-x-unit-lg space-x-reverse font-label-lg text-label-lg">
+<li class=""><a class="text-surface-white hover:text-primary-fixed transition-colors" href="SCREEN_2">الرئيسية</a></li>
+<li class=""><a class="text-primary-fixed border-b-2 border-primary-fixed pb-1" href="SCREEN_3">أسطولنا</a></li>
+<li class=""><a class="text-surface-white hover:text-primary-fixed transition-colors" href="#">العروض</a></li>
+<li class=""><a class="text-surface-white hover:text-primary-fixed transition-colors" href="SCREEN_3">الفروع</a></li>
+<li class=""><a class="text-surface-white hover:text-primary-fixed transition-colors" href="SCREEN_3">خدمة المطار</a></li>
+<li class=""><a class="text-surface-white hover:text-primary-fixed transition-colors" href="SCREEN_4">عن الشركة</a></li>
+<li class=""><a class="text-surface-white hover:text-primary-fixed transition-colors" href="SCREEN_8">اتصل بنا</a></li>
+</ul>
+<a class="hidden md:block bg-primary-container text-on-tertiary font-label-md text-label-md px-unit-xl py-3 rounded hover:bg-gold-hover hover:-translate-y-0.5 transition-all duration-300" href="SCREEN_3">
+                احجز الآن
+            </a>
+<!-- Mobile Menu Toggle (Placeholder) -->
+<button class="md:hidden text-primary-fixed">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-unit-lg py-section-gap">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex text-body-sm font-body-sm text-on-surface-variant mb-unit-lg">
+<ol class="inline-flex items-center space-x-2 space-x-reverse">
+<li class="inline-flex items-center">
+<a class="hover:text-primary-container transition-colors" href="SCREEN_2">الرئيسية</a>
+</li>
+<li class="">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_left</span>
+<a class="hover:text-primary-container transition-colors" href="SCREEN_3">أسطولنا</a>
+</div>
+</li>
+<li class="">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_left</span>
+<span class="text-on-background font-label-md">مرسيدس بنز جي كلاس 2024</span>
+</div>
+</li>
+</ol>
+</nav>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Left Column: Car Details (Images & Specs) -->
+<div class="w-full lg:w-2/3">
+<!-- Title Mobile (Moves above image on mobile) -->
+<div class="lg:hidden mb-4">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-2">مرسيدس بنز جي كلاس 2024</h1>
+<div class="flex items-center gap-2">
+<span class="bg-primary-container/10 text-primary-container font-label-md text-sm px-2 py-1 rounded">دفع رباعي فاخر</span>
+</div>
+</div>
+<!-- Image Gallery -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_5px_15px_rgba(0,0,0,0.08)] mb-section-gap">
+<!-- Main Image -->
+<div class="relative w-full aspect-video bg-surface-container">
+<img alt="Mercedes G Class" class="w-full h-full object-cover" data-alt="A pristine, gleaming 2024 Mercedes-Benz G-Class SUV parked on a smooth, modern concrete surface. The vehicle is painted in a sophisticated obsidian black, reflecting soft, high-key ambient lighting that emphasizes its iconic boxy silhouette and premium chrome accents. The setting is a minimalist, brightly lit studio space with expansive white walls and subtle gold architectural details, evoking a sense of corporate luxury and high-end automotive excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1yS6hvwNPXT_Y97PUM4dHjG73PIcXbLLx2-P89-HrRHw848PiX-Fngg0BVJXsjwSAMypW1VAidIoN1uNJe9y10MP1PPpSgJgf1Y2xBqlqh5iHGmO7roAO3MwJV_DUIvxjvBPaalbuWcxmZsCC3uxBq-pbXPw6OdExDDUKC0ZLeLNwKsWW87hgCM6aMI1ZNqDwgzwullvVp2OZS4-0L_MmcsxeSFHaljqV-Vha0tVhlxFUH0eQc9AzgPtOLLIXxaDw1_k5K9kpaq6"/>
+<!-- Status Chip -->
+<div class="absolute top-4 right-4 bg-success/10 backdrop-blur-sm border border-success/20 text-success font-label-md px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+                            متاح للحجز الفوري
+                        </div>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-2 p-2">
+<button class="relative w-full aspect-video bg-surface-container rounded overflow-hidden border-2 border-primary-container cursor-pointer">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="A close-up studio shot of the front grille and iconic round LED headlights of a black Mercedes-Benz G-Class. High-key lighting highlights the chrome three-pointed star emblem against a clean, bright white background, emphasizing luxury and precision engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1yS6hvwNPXT_Y97PUM4dHjG73PIcXbLLx2-P89-HrRHw848PiX-Fngg0BVJXsjwSAMypW1VAidIoN1uNJe9y10MP1PPpSgJgf1Y2xBqlqh5iHGmO7roAO3MwJV_DUIvxjvBPaalbuWcxmZsCC3uxBq-pbXPw6OdExDDUKC0ZLeLNwKsWW87hgCM6aMI1ZNqDwgzwullvVp2OZS4-0L_MmcsxeSFHaljqV-Vha0tVhlxFUH0eQc9AzgPtOLLIXxaDw1_k5K9kpaq6"/>
+</button>
+<button class="relative w-full aspect-video bg-surface-container rounded overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors opacity-70 hover:opacity-100 cursor-pointer">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="A detailed view of the luxurious interior of a Mercedes G-Class, featuring premium macchiato beige Nappa leather seats and dark open-pore wood trim. Soft, ambient white light illuminates the modern dashboard and dual-screen display in a clean, upscale setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1yS6hvwNPXT_Y97PUM4dHjG73PIcXbLLx2-P89-HrRHw848PiX-Fngg0BVJXsjwSAMypW1VAidIoN1uNJe9y10MP1PPpSgJgf1Y2xBqlqh5iHGmO7roAO3MwJV_DUIvxjvBPaalbuWcxmZsCC3uxBq-pbXPw6OdExDDUKC0ZLeLNwKsWW87hgCM6aMI1ZNqDwgzwullvVp2OZS4-0L_MmcsxeSFHaljqV-Vha0tVhlxFUH0eQc9AzgPtOLLIXxaDw1_k5K9kpaq6"/>
+</button>
+<button class="relative w-full aspect-video bg-surface-container rounded overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors opacity-70 hover:opacity-100 cursor-pointer">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="A dynamic angle focusing on the large, multi-spoke AMG alloy wheels of a luxury black SUV. The lighting is crisp and modern, reflecting off the polished metal surfaces against a pristine white studio floor, highlighting the vehicle's premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1yS6hvwNPXT_Y97PUM4dHjG73PIcXbLLx2-P89-HrRHw848PiX-Fngg0BVJXsjwSAMypW1VAidIoN1uNJe9y10MP1PPpSgJgf1Y2xBqlqh5iHGmO7roAO3MwJV_DUIvxjvBPaalbuWcxmZsCC3uxBq-pbXPw6OdExDDUKC0ZLeLNwKsWW87hgCM6aMI1ZNqDwgzwullvVp2OZS4-0L_MmcsxeSFHaljqV-Vha0tVhlxFUH0eQc9AzgPtOLLIXxaDw1_k5K9kpaq6"/>
+</button>
+<button class="relative w-full aspect-video bg-surface-container rounded overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors opacity-70 hover:opacity-100 cursor-pointer">
+<img alt="Thumbnail 4" class="w-full h-full object-cover" data-alt="A rear three-quarter view of a black Mercedes G-Class parked in a minimalist, bright studio environment. The signature rear mounted spare tire cover is prominent, catching soft reflections from the high-key lighting, projecting a strong, luxurious corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1yS6hvwNPXT_Y97PUM4dHjG73PIcXbLLx2-P89-HrRHw848PiX-Fngg0BVJXsjwSAMypW1VAidIoN1uNJe9y10MP1PPpSgJgf1Y2xBqlqh5iHGmO7roAO3MwJV_DUIvxjvBPaalbuWcxmZsCC3uxBq-pbXPw6OdExDDUKC0ZLeLNwKsWW87hgCM6aMI1ZNqDwgzwullvVp2OZS4-0L_MmcsxeSFHaljqV-Vha0tVhlxFUH0eQc9AzgPtOLLIXxaDw1_k5K9kpaq6"/>
+</button>
+</div>
+</div>
+<!-- Car Header (Desktop) -->
+<div class="hidden lg:flex justify-between items-end mb-unit-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-2">مرسيدس بنز جي كلاس 2024</h1>
+<span class="text-on-surface-variant font-body-lg">القوة المطلقة تلتقي بالفخامة الاستثنائية</span>
+</div>
+</div>
+<!-- Specs Grid -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-on-background mb-unit-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">tune</span>
+                        المواصفات التقنية
+                    </h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-unit-md">
+<!-- Spec Item -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">calendar_month</span>
+<span class="font-label-md text-on-background mb-1">الموديل</span>
+<span class="font-body-sm text-on-surface-variant">2024</span>
+</div>
+<!-- Spec Item -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">airline_seat_recline_normal</span>
+<span class="font-label-md text-on-background mb-1">المقاعد</span>
+<span class="font-body-sm text-on-surface-variant">5 ركاب</span>
+</div>
+<!-- Spec Item -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">settings</span>
+<span class="font-label-md text-on-background mb-1">ناقل الحركة</span>
+<span class="font-body-sm text-on-surface-variant">أوتوماتيك 9 سرعات</span>
+</div>
+<!-- Spec Item -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">local_gas_station</span>
+<span class="font-label-md text-on-background mb-1">الوقود</span>
+<span class="font-body-sm text-on-surface-variant">بنزين</span>
+</div>
+<!-- Engine Type -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">engine</span>
+<span class="font-label-md text-on-background mb-1">نوع المحرك</span>
+<span class="font-body-sm text-on-surface-variant">V8 سعة 4.0 لتر</span>
+</div>
+<!-- Horsepower -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">speed</span>
+<span class="font-label-md text-on-background mb-1">القوة الحصانية</span>
+<span class="font-body-sm text-on-surface-variant">585 حصان</span>
+</div>
+<!-- Fuel Tank -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">ev_station</span>
+<span class="font-label-md text-on-background mb-1">سعة الخزان</span>
+<span class="font-body-sm text-on-surface-variant">100 لتر</span>
+</div>
+<!-- Acceleration -->
+<div class="bg-surface-container-lowest p-unit-md rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-3xl text-primary-container mb-2 icon-fill">timer</span>
+<span class="font-label-md text-on-background mb-1">التسارع (0-100)</span>
+<span class="font-body-sm text-on-surface-variant">4.5 ثانية</span>
+</div></div>
+</section>
+<!-- Features List -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-on-background mb-unit-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">verified</span>
+                        المميزات الإضافية
+                    </h2>
+<div class="bg-surface-container-lowest rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.08)] p-unit-lg border border-surface-variant/50">
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 font-body-md text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+                                نظام ملاحة GPS مدمج
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+                                اتصال بلوتوث / Apple CarPlay
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+                                كاميرا 360 درجة ومستشعرات ركن
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+                                مقاعد جلدية قابلة للتدفئة والتبريد
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+                                نظام صوتي محيطي Burmester
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+                                فتحة سقف بانورامية
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+    مثبت سرعة تكيفي
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+    نظام التحذير من مغادرة المسار
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+    مقاعد مهواة
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+    عرض المعلومات على الزجاج الأمامي
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+    نظام صوتي فاخر
+</li></ul>
+</div>
+</section>
+<!-- Description -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-background mb-unit-md">نظرة عامة</h2>
+<div class="font-body-lg text-on-surface-variant leading-relaxed">
+<p class="">
+                            تجسد سيارة مرسيدس بنز جي كلاس 2024 ذروة الفخامة الهندسية والأداء الاستثنائي. مصممة لتلبي تطلعات النخبة، توفر هذه السيارة تجربة قيادة لا تضاهى سواء في شوارع المدينة الأنيقة أو على التضاريس الوعرة، مع الحفاظ على أعلى مستويات الراحة والأمان.
+                        </p>
+</div>
+</section>
+</div>
+<!-- Right Column: Booking Form Sticky Sidebar -->
+<div class="w-full lg:w-1/3">
+<div class="sticky top-24 bg-surface-container-lowest rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.12)] overflow-hidden border border-border-light">
+<!-- Pricing Header -->
+<div class="bg-surface-dark p-unit-md text-center"><div class="flex flex-col gap-2">
+<div class="flex justify-between items-center px-4">
+<span class="font-body-md text-surface-variant">السعر اليومي</span>
+<span class="font-label-lg text-primary-fixed">250 ر.ع</span>
+</div>
+<div class="flex justify-between items-center px-4 py-2 bg-primary-container/20 rounded mx-2">
+<span class="font-body-md text-surface-variant">السعر الأسبوعي</span>
+<div class="text-right">
+<span class="font-label-lg text-primary-fixed">1,485 ر.ع</span>
+<div class="text-[10px] text-success font-bold">وفر 15%</div>
+</div>
+</div>
+</div></div>
+<div class="p-unit-lg">
+<form action="{{DATA:SCREEN:SCREEN_9}}" method="POST">
+<!-- Dates Section -->
+<h3 class="font-label-lg text-on-background mb-unit-md border-b border-surface-variant pb-2">تفاصيل الحجز</h3>
+<div class="space-y-form-gap mb-unit-lg">
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2" for="pickup_date">تاريخ ووقت الاستلام</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="material-symbols-outlined text-outline">event</span>
+</span>
+<input class="w-full bg-surface-container-lowest border border-[#CCC] text-on-background rounded-md pl-3 pr-10 py-3 font-body-md focus:border-primary-container focus:ring-0 focus:outline-none focus:shadow-[0_0_10px_rgba(176,141,87,0.5)] transition-shadow" id="pickup_date" type="datetime-local"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2" for="return_date">تاريخ ووقت الإرجاع</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="material-symbols-outlined text-outline">event</span>
+</span>
+<input class="w-full bg-surface-container-lowest border border-[#CCC] text-on-background rounded-md pl-3 pr-10 py-3 font-body-md focus:border-primary-container focus:ring-0 focus:outline-none focus:shadow-[0_0_10px_rgba(176,141,87,0.5)] transition-shadow" id="return_date" type="datetime-local"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2" for="pickup_location">موقع الاستلام</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-[#CCC] text-on-background rounded-md pl-10 pr-3 py-3 font-body-md focus:border-primary-container focus:ring-0 focus:outline-none focus:shadow-[0_0_10px_rgba(176,141,87,0.5)] transition-shadow cursor-pointer" id="pickup_location">
+<option value="airport">مطار مسقط الدولي</option>
+<option value="branch1">فرع العذيبة</option>
+<option value="branch2">فرع القرم</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Options Section -->
+<h3 class="font-label-lg text-on-background mb-unit-md border-b border-surface-variant pb-2">التأمين والإضافات</h3>
+<div class="space-y-3 mb-unit-lg">
+<!-- Insurance -->
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2">نوع التأمين</label>
+<select class="w-full bg-surface-container-lowest border border-[#CCC] text-on-background rounded-md pl-10 pr-3 py-3 font-body-md focus:border-primary-container focus:ring-0 focus:outline-none focus:shadow-[0_0_10px_rgba(176,141,87,0.5)] transition-shadow cursor-pointer">
+<option value="basic">تأمين أساسي (مشمول)</option>
+<option value="full">تأمين شامل (+25 ر.ع / يوم)</option>
+</select>
+</div>
+<!-- Addons Checkboxes -->
+<div class="pt-2 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="w-5 h-5 rounded border-[#CCC] text-primary-container focus:ring-primary-container/50 cursor-pointer" type="checkbox"/>
+</div>
+<span class="font-body-md text-on-surface group-hover:text-primary-container transition-colors flex-grow">مقعد أطفال</span>
+<span class="font-label-md text-on-surface-variant">+5 ر.ع / يوم</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="w-5 h-5 rounded border-[#CCC] text-primary-container focus:ring-primary-container/50 cursor-pointer" type="checkbox"/>
+</div>
+<span class="font-body-md text-on-surface group-hover:text-primary-container transition-colors flex-grow">سائق إضافي</span>
+<span class="font-label-md text-on-surface-variant">+10 ر.ع / يوم</span>
+</label>
+</div>
+</div>
+<!-- Summary & CTA -->
+<div class="bg-surface-container-low p-4 rounded-lg mb-unit-md">
+<div class="flex justify-between items-center mb-2">
+<span class="font-body-md text-on-surface-variant">المدة</span>
+<span class="font-label-md text-on-background">3 أيام</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-border-light">
+<span class="font-label-lg text-on-background">الإجمالي التقريبي</span>
+<span class="font-headline-sm text-primary-container">750 ر.ع</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-surface-white font-label-lg py-4 rounded-md hover:bg-gold-hover hover:-translate-y-0.5 transition-all duration-300 shadow-md" type="submit">
+                                المتابعة للدفع
+                            </button>
+<p class="text-center font-body-sm text-on-surface-variant mt-3">
+                                لن يتم خصم أي مبلغ حتى تأكيد الحجز النهائي
+                            </p>
+</form>
+<div class="mt-4 text-center">
+<a class="text-primary hover:text-gold-hover font-label-md transition-colors" href="SCREEN_3">إلغاء والعودة لأسطولنا</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-dark w-full border-t border-outline-variant mt-section-gap">
+<div class="max-w-container-max mx-auto px-unit-lg py-section-gap grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1">
+<img alt="سمارت لتأجير السيارات" class="h-12 object-contain bg-surface-container-lowest rounded px-2 mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_CXb0jGxGUHhszlf1RLqkOSCtLwYqtePr73Or1eWMDPgXLrRqg0mV_66etRtUGQIZQ50PSy2fT2-8x2Ivu3KHTNNkOUeKbkVlMvzHNdS1Ld_gHdVuSBtF8xPWc-pLShkrm01h_qw8ggCAict7LEiCgpstsGMncxnVQghht7R77vabtVZOct1U3bffdrvmvXsXQ18hJUHTiQKW7_A8c9n4NXJHtdthZgd_OA2ChKnArL2ln-k3KUMr5A"/>
+<div class="font-headline-sm text-headline-sm text-primary-fixed mb-4">سمارت لتأجير السيارات</div>
+<p class="font-body-sm text-surface-variant/80 mb-4 leading-relaxed">
+                    نقدم لك تجربة تأجير سيارات فاخرة لا مثيل لها في سلطنة عمان. أسطولنا يضم أحدث السيارات لتلبية كافة احتياجاتك الراقية.
+                </p>
+</div>
+<!-- Quick Links -->
+<div class="col-span-1 md:col-span-2 flex flex-col md:flex-row justify-around">
+<div>
+<h4 class="font-label-md text-label-md text-primary-fixed mb-4">روابط سريعة</h4>
+<ul class="space-y-2 font-body-md text-body-md text-secondary-fixed">
+<li class=""><a class="hover:text-primary transition-colors" href="#">سياسة الخصوصية</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">الشروط والأحكام</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+<div class="mt-4 md:mt-0">
+<h4 class="font-label-md text-label-md text-primary-fixed mb-4">الشركة</h4>
+<ul class="space-y-2 font-body-md text-body-md text-secondary-fixed">
+<li class=""><a class="hover:text-primary transition-colors" href="SCREEN_3">الفروع</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="SCREEN_8">اتصل بنا</a></li>
+</ul>
+</div>
+</div>
+<!-- Contact/Social -->
+<div class="col-span-1 md:col-span-1">
+<h4 class="font-label-md text-label-md text-primary-fixed mb-4">تواصل معنا</h4>
+<div class="flex space-x-4 space-x-reverse mb-4 text-secondary-fixed">
+<!-- Social placeholders -->
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="border-t border-outline-variant/30 py-4 text-center font-body-sm text-secondary-fixed-dim">
+            © 2024 سمارت لتأجير السيارات. جميع الحقوق محفوظة.
+        </div>
+</footer>
+</body></html>
